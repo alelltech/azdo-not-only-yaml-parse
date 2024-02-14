@@ -1,18 +1,3 @@
-# Azure Devops Task
-
-Este projeto contribui com multiplas `Tasks` localizadas na pasta `./BuildTasks/*`.
-
-## Visao geral
-
-Um [custom task](https://learn.microsoft.com/en-us/azure/devops/extend/develop/add-build-task?view=azure-devops) permite que a implementação de tarefas como build, test, package, deploy sejam desacopladas do pipeline principal.
-
-Além disso a custom task tem outras vantagens:
-- É cross-platform (funciona em windows, macos,linux) se implementado com Typescript
-- É testável
-- Possibilita teste local, não necessitando do Azure Devops.
-
-A arquitetura geral do projeto gerado consiste em:
-
 
 <pre class="language-filetree vscode-light">
 <code>├─📁 <span class="hlft-string">.azuredevops</span>..: <span class="hlft-comment"> </span>
