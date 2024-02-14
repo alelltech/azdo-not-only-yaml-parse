@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/Microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
-  "id": "9f82c474-c0ea-4cb7-9a33-1c9451ac80c7",
+  "id": "f4af6c25-1488-41ee-87ff-b6a98ff232e2",
   "name": "JsonParse",
   "friendlyName": "Json Parse",
   "description": "Parse, Query and Extract data from JSON file",
@@ -10,7 +10,7 @@
   "version": {
     "Major": 4,
     "Minor": 1,
-    "Patch": 5
+    "Patch": 6
   },
   "instanceNameFormat": "Json ${sourceType}",
   "inputs": [
