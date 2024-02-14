@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json.schemastore.org/vss-extension.json",
+  "manifestVersion": 1,
+  "id": "noy-parse",
+  "version": "4.1.4",
+  "name": "Not Only Yaml parse utility",
+  "description": "Parse, Query and Extract data from YAML, XML and JSON files",
+  "publisher": "alell-tech",
+  "public": true,
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "categories": [
+    "Azure Pipelines"
+  ],
+  "icons": {
+    "default": "images/vss.png"
+  },
+  "screenshots": [],
+  "content": {
+    "details": {
+      "path": "README.md"
+    },
+    "license": {
+      "path": "LICENSE"
+    }
+  },
+  "links": {
+    "support": {
+      "uri": "https://github.com/alelltech/azdo-not-only-yaml-parse/issues"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "uri": "https://github.com/alelltech/azdo-not-only-yaml-parse"
+  },
+  "tags": [
+    "java",
+    "azure devops",
+    "pipeline",
+    "task"
+  ],
+  "files": [
+    {
+      "path": "BuildTasks/XmlParse"
+    },
+    {
+      "path": "BuildTasks/JsonParse"
+    },
+    {
+      "path": "BuildTasks/YamlParse"
+    },
+    {
+      "path": "images",
+      "addressable": true
+    }
+  ],
+  "contributions": [
+    {
+      "id": "XmlParse",
+      "type": "ms.vss-distributed-task.task",
+      "targets": [
+        "ms.vss-distributed-task.tasks"
+      ],
+      "properties": {
+        "name": "BuildTasks/XmlParse"
+      }
+    },
+    {
+      "id": "JsonParse",
+      "type": "ms.vss-distributed-task.task",
+      "targets": [
+        "ms.vss-distributed-task.tasks"
+      ],
+      "properties": {
+        "name": "BuildTasks/JsonParse"
+      }
+    },
+    {
+      "id": "YamlParse",
+      "type": "ms.vss-distributed-task.task",
+      "targets": [
+        "ms.vss-distributed-task.tasks"
+      ],
+      "properties": {
+        "name": "BuildTasks/YamlParse"
+      }
+    }
+  ]
+}
