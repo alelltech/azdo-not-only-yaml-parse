@@ -6,7 +6,7 @@
   "description": "Parse, Query and Extract data from YAML file",
   "helpMarkDown": "",
   "category": "Utility",
-  "author": "alell-tech",
+  "author": "alelltech",
   "version": {
     "Major": 4,
     "Minor": 1,

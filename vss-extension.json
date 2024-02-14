@@ -5,7 +5,7 @@
   "version": "4.1.4",
   "name": "Not Only Yaml parse utility",
   "description": "Parse, Query and Extract data from YAML, XML and JSON files",
-  "publisher": "alell-tech",
+  "publisher": "alelltech",
   "public": true,
   "targets": [
     {
