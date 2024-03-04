@@ -7,12 +7,14 @@ This extension provides 3 tasks!
 * `JsonParse`
 * `YamlParse`
 * `XmlParse`
+* `PropertiesParse`
 
 ## Features
 
 * Parse `Yaml` document from **File**, **Raw Text** or an **Variable**.
 * Parse `Json` document from **File**, **Raw Text** or an **Variable**.
 * Parse `Xml` document from **File**, **Raw Text** or an **Variable**.
+* Parse `Properties` document from **File**, **Raw Text** or an **Variable**.
 * Query across documents and fields using [jsonpath-plus](https://jsonpath-plus.github.io/JSONPath/docs/ts/).
 * Extract values from multiple queries to **File**, **echo** or **Variable**.
 * **Pipe based** utility functions (only *downcase* and *uppercase* until now).
@@ -75,6 +77,15 @@ This extension provides 3 tasks!
       queries: |
         var NAME = .name
         var VERSION = .version
+
+  - task: PropertiesParse@4
+    displayName: "Extract application.properties info"
+    inputs:
+      source: catalog-info.yaml
+      sourceType: file
+      queries: |
+        # Extract results to variables
+        var APPLICATON_NAME = .APPLICATON_NAME | downcase
 
 ```
 

@@ -60,6 +60,12 @@ npm run new:task
 
 ```
 
+## Full publish scripts
+```bash
+npm run coverage && npm run release:full && npm run package
+
+```
+
 ## Debug
 
 Debug modes are:
