@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.2.0](https://github.com/alelltech/azdo-not-only-yaml-parse/compare/v4.1.9...v4.2.0) (2024-03-04)
+
+
+### Features
+
+* add properties parse ([a8f6232](https://github.com/alelltech/azdo-not-only-yaml-parse/commit/a8f6232edc72353d4c93f845c70c1879f54e43bf))
+
+
+### Others
+
+* **release:** 4.1.9 ([85edff7](https://github.com/alelltech/azdo-not-only-yaml-parse/commit/85edff7ef23ccd76f5320e5e3a22f7dfda3ec537))
+
 ### [4.1.9](https://github.com/alelltech/azdo-not-only-yaml-parse/compare/v4.1.8...v4.1.9) (2024-02-14)
 
 
