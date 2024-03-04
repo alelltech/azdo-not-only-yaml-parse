@@ -26,5 +26,8 @@ module.exports = {
     { "filename": "BuildTasks/XmlParse/v4/package.json", "type": "json" },
     { "filename": "BuildTasks/XmlParse/v4/task.json", "updater": "task-version.js" },
 
+    { "filename": "BuildTasks/PropertiesParse/v4/package.json", "type": "json" },
+    { "filename": "BuildTasks/PropertiesParse/v4/task.json", "updater": "task-version.js" },
+
   ]
 }

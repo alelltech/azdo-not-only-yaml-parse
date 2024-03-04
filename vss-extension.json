@@ -44,6 +44,9 @@
   ],
   "files": [
     {
+      "path": "BuildTasks/PropertiesParse"
+    },
+    {
       "path": "BuildTasks/XmlParse"
     },
     {
@@ -58,6 +61,16 @@
     }
   ],
   "contributions": [
+    {
+      "id": "NoyParsePropertiesParse",
+      "type": "ms.vss-distributed-task.task",
+      "targets": [
+        "ms.vss-distributed-task.tasks"
+      ],
+      "properties": {
+        "name": "BuildTasks/PropertiesParse"
+      }
+    },
     {
       "id": "XmlParse",
       "type": "ms.vss-distributed-task.task",

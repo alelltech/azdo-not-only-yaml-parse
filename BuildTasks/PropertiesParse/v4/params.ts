@@ -1,9 +1,10 @@
-import { getVariable, warning } from "azure-pipelines-task-lib";
+import { BuildVariables, variablesMap } from "../../Common/v4/BuiltInVariables"
+import { getInput, getVariable } from "azure-pipelines-task-lib";
+import { _getVariableKey, _loadData, _warning } from "azure-pipelines-task-lib/internal";
 import { readFileSync } from "fs";
 import { loadAll } from "js-yaml";
 
 export type SourceType = 'file' | 'text' | 'variable';
-
 export interface Inputs {
   sourceType: SourceType
   source: string // catalog-info.y*ml
@@ -33,23 +34,20 @@ export const contentHandleMap: Record<SourceType, (source: string) => string> = 
   'text': (content) => content
 }
 
-export function parseScriptInput(
-  {
-    source,
-    sourceType,
-    queries,
-    fnToJson
-  }: Inputs & { fnToJson: (rawContent: string) => Array<any> | Record<string, any> }
-): InputsParsed {
+export function parseInput(): InputsParsed {
+  const source: SourceType = getInput('source', true) as any
+  const sourceType = getInput('sourceType', true) ?? ''
   let sourceContent = source;
   const getContent = contentHandleMap[sourceType] ?? contentHandleMap.text
 
   if(getContent == contentHandleMap.text && sourceType != 'text') {
-    warning(`Source Type '${sourceType}' is not implemented, using default 'text'.`);
+    _warning(`Source Type '${sourceType}' is not implemented, using default 'text'.`);
   }
 
-  const parsedContent = (fnToJson ?? JSON.parse)(getContent(sourceContent))
+  const parsedContent = JSON.parse(getContent(sourceContent));
   const result: InputsParsed = {queries: [], sourceContent, parsedContent, sourceType: sourceType as any }
+
+  const queries = getInput('queries', true) ?? '';
 
   const regex = /(((var|file) {1,}([^=]+)=([^\|\n]+))|((echo) {1,}([^\|\n]+)))( {0,}\| {0,}([^\n]+))?/gm
 
