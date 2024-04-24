@@ -32,7 +32,7 @@ export const pipesMap: Record<string, (value: any) => any> = {
   'uppercase': (value) => (value ?? '').toUpperCase(),
 }
 
-export const runScript = (queries: { kind: QueryKind; dest: string; jpath: string; pipes: string[]; }[], parsedContent: any[]) =>{
+export const runScript = (queries: { kind: QueryKind; dest: string; jpath: string; pipes: string[]; }[], parsedContent: any[] | Record<string, any>) =>{
   for (const { kind, dest, jpath, pipes } of queries) {
     const execQuery = execQueryMap[kind] ?? execQueryMap.echo;
     let p = jpath;

@@ -15,7 +15,7 @@ export type QueryKind = 'var' | 'file' | 'echo' | 'out';
 export type InputsParsed = {
   sourceType: SourceType
   sourceContent: string // catalog-info.y*ml
-  parsedContent: Array<any>
+  parsedContent: Array<any> | Record<string, any>
   queries: Array<{ kind: QueryKind, dest: string, jpath: string, pipes: string[] }>
 }
 
@@ -39,7 +39,7 @@ export function parseScriptInput(
     sourceType,
     queries,
     fnToJson
-  }: Inputs & { fnToJson: (rawContent: string) => Array<any> }
+  }: Inputs & { fnToJson: (rawContent: string) => Array<any> | Record<string, any> }
 ): InputsParsed {
   let sourceContent = source;
   const getContent = contentHandleMap[sourceType] ?? contentHandleMap.text
