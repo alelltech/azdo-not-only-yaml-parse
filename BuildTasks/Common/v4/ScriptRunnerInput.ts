@@ -10,7 +10,7 @@ export interface Inputs {
   queries: string // 'VAR_NAME=$..field\nVAR_SEC=$..field2'
 }
 
-export type QueryKind = 'var' | 'file' | 'echo';
+export type QueryKind = 'var' | 'file' | 'echo' | 'out';
 
 export type InputsParsed = {
   sourceType: SourceType
@@ -39,7 +39,7 @@ export function parseScriptInput(
     sourceType,
     queries,
     fnToJson
-  }: Inputs & { fnToJson: (rawContent: string) => Array<any> | Record<string, any> }
+  }: Inputs & { fnToJson: (rawContent: string) => Array<any> }
 ): InputsParsed {
   let sourceContent = source;
   const getContent = contentHandleMap[sourceType] ?? contentHandleMap.text
@@ -51,7 +51,7 @@ export function parseScriptInput(
   const parsedContent = (fnToJson ?? JSON.parse)(getContent(sourceContent))
   const result: InputsParsed = {queries: [], sourceContent, parsedContent, sourceType: sourceType as any }
 
-  const regex = /(((var|file) {1,}([^=]+)=([^\|\n]+))|((echo) {1,}([^\|\n]+)))( {0,}\| {0,}([^\n]+))?/gm
+  const regex = /(((var|file|out) {1,}([^=]+)=([^\|\n]+))|((echo) {1,}([^\|\n]+)))( {0,}\| {0,}([^\n]+))?/gm
 
   let m;
 

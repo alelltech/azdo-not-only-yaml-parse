@@ -4,10 +4,15 @@ import {
 import { _debug, _warning } from "azure-pipelines-task-lib/internal";
 import { JSONPath } from "jsonpath-plus";
 import * as path from 'node:path';
+import { QueryKind } from './ScriptRunnerInput';
 
-export type QueryKind = 'var' | 'file' | 'echo';
+// export type QueryKind = 'var' | 'file' | 'echo';
 
-export const execQueryMap: Record<'var' | 'file' | 'echo', (destination: string, value: string, query: string) => void> = {
+export const execQueryMap: Record<QueryKind, (destination: string, value: string, query: string) => void> = {
+  'out': (varname, value, query) => {
+    console.debug(`out ${varname} = ${query}`);
+    console.log(`echo ##vso[task.setvariable variable=${varname};isOutput=true;]${value}`)
+  },
   'var': (varname, value, query) => {
     console.debug(`var ${varname} = ${query}`);
     console.log(`echo ##vso[task.setvariable variable=${varname};]${value}`)

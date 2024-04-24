@@ -52,6 +52,9 @@ This extension provides 3 tasks!
         var NAME = .metadata.name | downcase
         var KIND = .kind
 
+        # Extract results to variables with ;isOutput=true flag
+        out KIND = .kind
+
         # Just print results
         echo .kind
 

@@ -36,6 +36,7 @@ describe(`Json Parse Suite`, () => {
     assert(runner.succeeded, "task should have succeeded");
     // assert(runner.warningIssues.length == 1, "task should have 1 warning");
     assert(runner.stdout.match(/##vso\[task.setvariable variable=NAME[^\]]+\]java-api-universal-greetings/), "should have setvariable expression of 'NAME' with 'java-api-universal-greetings' as downcase pipe.");
+    assert(runner.stdout.match(/##vso\[task.setvariable variable=DOC_THREE_NAME;isOutput=true[^\]]+\]/), "should have setvariable expression of 'DOC_THREE_NAME' with ';isOutput=true' for output value.");
     assert(runner.stdout.match(/##vso\[task\.issue type\=warning;\]JSONPath '.emptyResultTest' has not results!/), "should 'warning' for empty queries results.");
   });
 
