@@ -1,4 +1,4 @@
-import { getVariable, warning } from "azure-pipelines-task-lib";
+import { findMatch, getVariable, warning } from "azure-pipelines-task-lib";
 import { readFileSync } from "fs";
 import { loadAll } from "js-yaml";
 
@@ -28,7 +28,14 @@ export const defaultsParams: Partial<Inputs> = {
 }
 
 export const contentHandleMap: Record<SourceType, (source: string) => string> = {
-  'file': (file) => readFileSync(file).toString('utf-8'),
+  'file': (file) => {
+    const matches = findMatch(process.cwd(), file);
+    if(matches.length == 0) throw new Error(`The '${file}' expression was not found!`);
+
+    if(matches.length > 1) throw new Error(`The '${file}' expression was found ${matches.length} ocurrences, review glob expression to match only one!`);
+
+    return readFileSync(matches[0]).toString('utf-8');
+  },
   'variable': (varname) => getVariable(varname) ?? '',
   'text': (content) => content
 }
