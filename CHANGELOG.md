@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.4.0](https://github.com/alelltech/azdo-not-only-yaml-parse/compare/v4.3.0...v4.4.0) (2024-04-25)
+
+
+### Features
+
+* improves file find with glob ([737fea6](https://github.com/alelltech/azdo-not-only-yaml-parse/commit/737fea602a5b17b944c92b7bcb64f60266a73bb2))
+
+
+### Others
+
+* **release:** 4.3.0 ([883e0b5](https://github.com/alelltech/azdo-not-only-yaml-parse/commit/883e0b5755d7cbba3ce6b03c03748648eb419b63))
+
 ## [4.3.0](https://github.com/alelltech/azdo-not-only-yaml-parse/compare/v4.2.1...v4.3.0) (2024-04-24)
 
 
