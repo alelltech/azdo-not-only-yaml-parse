@@ -1,6 +1,6 @@
 {
   "name": "utils-kit.base64",
-  "version": "4.1.10",
+  "version": "4.1.11",
   "scripts": {
     "clean": "tsc --build --clean",
     "compile": "tsc",
