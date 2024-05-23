@@ -1,9 +1,9 @@
 {
   "$schema": "https://raw.githubusercontent.com/Microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
-  "id": "85fb110b-a7bc-46a8-8b88-9cce215a59c1",
-  "name": "YamlParse",
-  "friendlyName": "Yaml parse utility",
-  "description": "Parse, Query and Extract data from YAML file",
+  "id": "59beac28-8628-4992-b12d-8948707a3105",
+  "name": "UtilsKitHttpAxiosRequest",
+  "friendlyName": "HTTP Axios Request",
+  "description": "HTTP Axios Request",
   "helpMarkDown": "",
   "category": "Utility",
   "author": "alelltech",
@@ -12,7 +12,7 @@
     "Minor": 1,
     "Patch": 9
   },
-  "instanceNameFormat": "Yaml ${sourceType}",
+  "instanceNameFormat": "HTTP Axios Request",
   "inputs": [
     {
       "name": "sourceType",
@@ -33,7 +33,7 @@
     },
     {
       "name": "source",
-      "label": "Source of Yaml contents",
+      "label": "Source of JSON contents",
       "required": true,
       "defaultValue": "",
       "type": "string",
@@ -49,7 +49,7 @@
       "required": true,
       "defaultValue": "",
       "type": "multiLine",
-      "helpMarkDown": "Set of queries to extract values from yaml contents: \n```\nvar NAME    =      .metadata.name | downcase\nvar KIND    =    .kind\necho      .kind\nfile  ./bar/annotations.json  = .metadata.annotations\n```\n",
+      "helpMarkDown": "Set of queries to extract values from yaml contents: \n```\nvar NAME = .metadata.name | downcase\nvar KIND = .kind\necho .kind\nfile ./foo/bar.json  = .metadata.annotations\n```\n",
       "aliases": [
         "jpaths",
         "expressions"
@@ -58,7 +58,7 @@
   ],
   "execution": {
     "Node16": {
-      "target": "YamlParse/v4/YamlParse.js"
+      "target": "HttpAxiosRequest/v4/HttpAxiosRequest.js"
     }
   }
 }

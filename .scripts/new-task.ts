@@ -1,5 +1,4 @@
 import inq from 'inquirer';
-import {green, yellow, red } from 'colors';
 import globSync from "glob/sync";
 import { sep, join as joinPath } from 'node:path';
 import { cpSync, readFileSync, writeFileSync, renameSync } from 'node:fs';
@@ -20,7 +19,7 @@ async function run(){
 
   const { taskName, from} = await prompt([{
     name: 'taskName',
-    message: `Task name (must be Humanized):`
+    message: `Task name (must be Humanized like 'My task one'):`
   },{
     name: 'from',
     message: `Based on (chose previous task to copy):`,

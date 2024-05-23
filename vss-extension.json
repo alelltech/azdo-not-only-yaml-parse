@@ -1,10 +1,10 @@
 {
   "$schema": "https://json.schemastore.org/vss-extension.json",
   "manifestVersion": 1,
-  "id": "noy-parse",
-  "version": "4.1.9",
-  "name": "Not Only Yaml parse utility",
-  "description": "Parse, Query and Extract data from YAML, XML and JSON files",
+  "id": "utils-kit",
+  "version": "4.1.10",
+  "name": "Utility Kit",
+  "description": "Utils tasks",
   "publisher": "alelltech",
   "public": true,
   "targets": [
@@ -29,12 +29,12 @@
   },
   "links": {
     "support": {
-      "uri": "https://github.com/alelltech/azdo-not-only-yaml-parse/issues"
+      "uri": "https://github.com/alelltech/azdo-utils-kit/issues"
     }
   },
   "repository": {
     "type": "git",
-    "uri": "https://github.com/alelltech/azdo-not-only-yaml-parse"
+    "uri": "https://github.com/alelltech/azdo-utils-kit"
   },
   "tags": [
     "java",
@@ -44,13 +44,7 @@
   ],
   "files": [
     {
-      "path": "BuildTasks/XmlParse"
-    },
-    {
-      "path": "BuildTasks/JsonParse"
-    },
-    {
-      "path": "BuildTasks/YamlParse"
+      "path": "BuildTasks/Base64"
     },
     {
       "path": "images",
@@ -59,33 +53,13 @@
   ],
   "contributions": [
     {
-      "id": "XmlParse",
+      "id": "UtilsKitBase64",
       "type": "ms.vss-distributed-task.task",
       "targets": [
         "ms.vss-distributed-task.tasks"
       ],
       "properties": {
-        "name": "BuildTasks/XmlParse"
-      }
-    },
-    {
-      "id": "JsonParse",
-      "type": "ms.vss-distributed-task.task",
-      "targets": [
-        "ms.vss-distributed-task.tasks"
-      ],
-      "properties": {
-        "name": "BuildTasks/JsonParse"
-      }
-    },
-    {
-      "id": "YamlParse",
-      "type": "ms.vss-distributed-task.task",
-      "targets": [
-        "ms.vss-distributed-task.tasks"
-      ],
-      "properties": {
-        "name": "BuildTasks/YamlParse"
+        "name": "BuildTasks/Base64"
       }
     }
   ]

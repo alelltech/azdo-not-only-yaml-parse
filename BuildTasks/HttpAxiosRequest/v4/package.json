@@ -1,5 +1,5 @@
 {
-  "name": "noy-tasks.xml-parse",
+  "name": "noy-extension-http-axios-request",
   "version": "4.1.9",
   "scripts": {
     "clean": "tsc --build --clean",
@@ -15,7 +15,7 @@
   "dependencies": {
     "azure-pipelines-task-lib": "^5.0.0-preview.0",
     "azure-pipelines-tool-lib": "^2.0.7",
-    "xml-js": "^1.6.11",
+    "js-yaml": "3.13.1",
     "jsonpath-plus": "7.2.0"
   },
   "devDependencies": {

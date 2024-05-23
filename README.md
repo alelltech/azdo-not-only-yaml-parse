@@ -80,7 +80,7 @@ This extension provides 3 tasks!
 
 ## Help us
 
-See [CONTRIBUTING.md](https://github.com/alelltech/azdo-not-only-yaml-parse/blob/main/CONTRIBUTING.md)
+See [CONTRIBUTING.md](https://github.com/alelltech/azdo-utils-kit/blob/main/CONTRIBUTING.md)
 
 
 

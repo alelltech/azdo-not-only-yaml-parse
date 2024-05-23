@@ -1,6 +1,6 @@
 {
-  "name": "noy-extension",
-  "version": "4.1.9",
+  "name": "azdo-utils",
+  "version": "4.1.10",
   "scripts": {
     "debug": "ts-node ",
     "new:task": "ts-node .scripts/new-task.ts",
