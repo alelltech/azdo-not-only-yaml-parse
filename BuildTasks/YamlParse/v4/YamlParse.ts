@@ -4,8 +4,9 @@ import {
   setResult
 } from 'azure-pipelines-task-lib/task';
 import { runScript } from '../../Common/v4/ScriptRunner';
-import { SourceType, parseScriptInput } from '../../Common/v4/ScriptRunnerInput';
+import { parseScriptInput } from '../../Common/v4/ScriptRunnerInput';
 import * as YAML from 'js-yaml'
+import { SourceType } from '@alell/azure-pipelines-task-commons'
 
 
 async function run() {
@@ -15,7 +16,7 @@ async function run() {
     const sourceType: SourceType = getInput('sourceType', true) as any;
     const inQueries = getInput('queries', true);
 
-    const { parsedContent, queries } = parseScriptInput({
+    const { parsedContent, queries } = await parseScriptInput({
       source,
       sourceType,
       queries: inQueries,

@@ -4,8 +4,9 @@ import {
   setResult
 } from 'azure-pipelines-task-lib/task';
 import { runScript } from '../../Common/v4/ScriptRunner';
-import { SourceType, parseScriptInput } from '../../Common/v4/ScriptRunnerInput';
+import { parseScriptInput } from '../../Common/v4/ScriptRunnerInput';
 import * as XML from 'xml-js';
+import { SourceType } from '@alell/azure-pipelines-task-commons'
 
 interface PipesFnMap {
   upper(value?: string): string
@@ -62,7 +63,7 @@ async function run() {
     const pipeAttributes = parsePipe(getInput('attributes'));
 
 
-    const { parsedContent, queries } = parseScriptInput({
+    const { parsedContent, queries } = await parseScriptInput({
       source,
       sourceType,
       queries: inQueries,

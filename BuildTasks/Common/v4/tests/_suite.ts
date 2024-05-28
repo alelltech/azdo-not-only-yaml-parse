@@ -122,7 +122,7 @@ describe(`Build Suite`, () => {
       const inSourceType = 'text';
       const inQueries = mockJsonQueries;
 
-      const { parsedContent, queries, sourceContent, sourceType } = parseScriptInput({
+      const { parsedContent, queries, sourceContent, sourceType } = await parseScriptInput({
         source,
         sourceType: inSourceType,
         queries: inQueries,

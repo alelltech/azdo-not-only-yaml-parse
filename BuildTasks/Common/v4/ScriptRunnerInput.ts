@@ -1,8 +1,8 @@
 import { findMatch, getVariable, warning } from "azure-pipelines-task-lib";
 import { readFileSync } from "fs";
 import { loadAll } from "js-yaml";
-
-export type SourceType = 'file' | 'text' | 'variable';
+import { getContent, SourceType } from '@alell/azure-pipelines-task-commons'
+// export type SourceType = 'file' | 'text' | 'variable';
 
 export interface Inputs {
   sourceType: SourceType
@@ -27,35 +27,35 @@ export const defaultsParams: Partial<Inputs> = {
   // customExtractions: string
 }
 
-export const contentHandleMap: Record<SourceType, (source: string) => string> = {
-  'file': (file) => {
-    const matches = findMatch(process.cwd(), file);
-    if(matches.length == 0) throw new Error(`The '${file}' expression was not found!`);
+// export const contentHandleMap: Record<SourceType, (source: string) => string> = {
+//   'file': (file) => {
+//     const matches = findMatch(process.cwd(), file);
+//     if(matches.length == 0) throw new Error(`The '${file}' expression was not found!`);
 
-    if(matches.length > 1) throw new Error(`The '${file}' expression was found ${matches.length} ocurrences, review glob expression to match only one!`);
+//     if(matches.length > 1) throw new Error(`The '${file}' expression was found ${matches.length} ocurrences, review glob expression to match only one!`);
 
-    return readFileSync(matches[0]).toString('utf-8');
-  },
-  'variable': (varname) => getVariable(varname) ?? '',
-  'text': (content) => content
-}
+//     return readFileSync(matches[0]).toString('utf-8');
+//   },
+//   'variable': (varname) => getVariable(varname) ?? '',
+//   'text': (content) => content
+// }
 
-export function parseScriptInput(
+export async function parseScriptInput(
   {
     source,
     sourceType,
     queries,
     fnToJson
   }: Inputs & { fnToJson: (rawContent: string) => Array<any> | Record<string, any> }
-): InputsParsed {
+): Promise<InputsParsed> {
   let sourceContent = source;
-  const getContent = contentHandleMap[sourceType] ?? contentHandleMap.text
+  // const getContent = contentHandleMap[sourceType] ?? contentHandleMap.text
 
-  if(getContent == contentHandleMap.text && sourceType != 'text') {
-    warning(`Source Type '${sourceType}' is not implemented, using default 'text'.`);
-  }
+  // if(getContent == contentHandleMap.text && sourceType != 'text') {
+  //   warning(`Source Type '${sourceType}' is not implemented, using default 'text'.`);
+  // }
 
-  const parsedContent = (fnToJson ?? JSON.parse)(getContent(sourceContent))
+  const parsedContent = (fnToJson ?? JSON.parse)(await getContent(sourceType, source))
   const result: InputsParsed = {queries: [], sourceContent, parsedContent, sourceType: sourceType as any }
 
   const regex = /(((var|file|out) {1,}([^=]+)=([^\|\n]+))|((echo) {1,}([^\|\n]+)))( {0,}\| {0,}([^\n]+))?/gm
