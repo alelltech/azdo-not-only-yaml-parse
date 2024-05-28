@@ -17,7 +17,7 @@
   },
 
   "dependencies": {
-    "azure-pipelines-task-lib": "^4.8.2",
+    "azure-pipelines-task-lib": "^4.9.0",
     "@alell/azure-pipelines-task-commons": "1.0.12",
     "jsonpath-plus": "7.2.0"
   },
