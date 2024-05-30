@@ -1,8 +1,9 @@
 import * as assert from "assert";
 import * as path from "path";
+
 import { MockTestRunner } from "azure-pipelines-task-lib/mock-test";
 import { mkdirSync, rmSync } from "fs";
-import { EXT, getRuntimePath } from "../../../Common/v4/RuntimeUtil";
+import { EXT, getRuntimePath } from "@alell/azure-pipelines-task-commons";
 import { _loadData } from "azure-pipelines-task-lib/internal";
 
 describe(`Xml Parse Suite`, () => {
@@ -19,7 +20,6 @@ describe(`Xml Parse Suite`, () => {
   after(() => {
     rmSync(tempDir, {recursive: true})
   });
-
 
   it("L0 evaluate queries", async function () {
     this.timeout(parseInt(process.env.TASK_TEST_TIMEOUT ?? '20000'));

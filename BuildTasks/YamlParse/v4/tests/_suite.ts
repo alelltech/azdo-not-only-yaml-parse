@@ -3,7 +3,7 @@ import * as path from "path";
 
 import { MockTestRunner } from "azure-pipelines-task-lib/mock-test";
 import { mkdirSync, rmSync } from "fs";
-import { EXT, getRuntimePath } from "../../../Common/v4/RuntimeUtil";
+import { EXT, getRuntimePath } from "@alell/azure-pipelines-task-commons";
 
 describe(`Yaml Parse Suite`, () => {
   const tempDir = path.join(__dirname, '_temp');

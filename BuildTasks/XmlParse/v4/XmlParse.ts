@@ -3,10 +3,10 @@ import {
   getInput,
   setResult
 } from 'azure-pipelines-task-lib/task';
-import { runScript } from '../../Common/v4/ScriptRunner';
-import { parseScriptInput } from '../../Common/v4/ScriptRunnerInput';
+import { parseScriptInput, executeScript } from '@alell/azure-pipelines-task-jsonpath-plus';
 import * as XML from 'xml-js';
 import { SourceType } from '@alell/azure-pipelines-task-commons'
+import { isCommon as _isCommon } from '../../Common/v4/Common';
 
 interface PipesFnMap {
   upper(value?: string): string
@@ -86,7 +86,7 @@ async function run() {
       }
     });
 
-    runScript(queries, parsedContent);
+    executeScript(queries, parsedContent);
 
   }
   catch (err: any) {

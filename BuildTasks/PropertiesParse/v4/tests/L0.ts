@@ -1,7 +1,6 @@
 import { join as joinPath} from 'node:path';
 import { TaskMockRunner } from 'azure-pipelines-task-lib/mock-run';
-import { setIn } from '../../../Common/v4/ParamsUtil';
-import { EXT } from '../../../Common/v4/RuntimeUtil';
+import { setIn, EXT } from '@alell/azure-pipelines-task-commons';
 import { mockJsonContent, mockQueries } from './L0.mock'
 import { _loadData } from 'azure-pipelines-task-lib/internal'
 import { setVariable } from 'azure-pipelines-task-lib';

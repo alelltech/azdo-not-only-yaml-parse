@@ -3,11 +3,11 @@ import {
   getInput,
   setResult
 } from 'azure-pipelines-task-lib/task';
-import { runScript } from '../../Common/v4/ScriptRunner';
-import { parseScriptInput } from '../../Common/v4/ScriptRunnerInput';
+import { parseScriptInput, executeScript } from '@alell/azure-pipelines-task-jsonpath-plus';
 import { parse, configDotenv } from 'dotenv'
 import { expand } from 'dotenv-expand'
 import { SourceType } from '@alell/azure-pipelines-task-commons'
+import { isCommon as _isCommon } from '../../Common/v4/Common';
 
 async function run() {
   try {
@@ -28,7 +28,7 @@ async function run() {
       }
     });
 
-    runScript(queries, parsedContent);
+    executeScript(queries, parsedContent);
 
   }
   catch (err: any) {

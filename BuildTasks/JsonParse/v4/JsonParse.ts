@@ -3,9 +3,9 @@ import {
   getInput,
   setResult
 } from 'azure-pipelines-task-lib/task';
-import { runScript } from '../../Common/v4/ScriptRunner';
-import { parseScriptInput } from '../../Common/v4/ScriptRunnerInput';
+import { parseScriptInput, executeScript } from '@alell/azure-pipelines-task-jsonpath-plus';
 import { SourceType } from '@alell/azure-pipelines-task-commons'
+import { isCommon as _isCommon } from '../../Common/v4/Common';
 
 async function run() {
   try {
@@ -21,7 +21,7 @@ async function run() {
       fnToJson: JSON.parse
     });
 
-    runScript(queries, parsedContent);
+    executeScript(queries, parsedContent);
 
   }
   catch (err: any) {
