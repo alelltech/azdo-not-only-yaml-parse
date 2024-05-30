@@ -10,7 +10,7 @@
   "version": {
     "Major": 4,
     "Minor": 4,
-    "Patch": 4
+    "Patch": 5
   },
   "instanceNameFormat": "Yaml ${sourceType}",
   "inputs": [
@@ -25,11 +25,7 @@
         "var": "var",
         "text": "text"
       },
-      "helpMarkDown": "",
-      "aliases": [
-        "type",
-        "kind"
-      ]
+      "helpMarkDown": ""
     },
     {
       "name": "source",
@@ -37,11 +33,7 @@
       "required": true,
       "defaultValue": "",
       "type": "string",
-      "helpMarkDown": "",
-      "aliases": [
-        "origin",
-        "src"
-      ]
+      "helpMarkDown": ""
     },
     {
       "name": "queries",
@@ -49,11 +41,7 @@
       "required": true,
       "defaultValue": "",
       "type": "multiLine",
-      "helpMarkDown": "Set of queries to extract values from yaml contents: \n```\nvar NAME    =      .metadata.name | downcase\nvar KIND    =    .kind\necho      .kind\nfile  ./bar/annotations.json  = .metadata.annotations\n```\n",
-      "aliases": [
-        "jpaths",
-        "expressions"
-      ]
+      "helpMarkDown": "Set of queries to extract values from yaml contents: \n```\nvar NAME    =      .metadata.name | downcase\nvar KIND    =    .kind\necho      .kind\nfile  ./bar/annotations.json  = .metadata.annotations\n```\n"
     }
   ],
   "execution": {
