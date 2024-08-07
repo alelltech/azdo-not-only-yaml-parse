@@ -44,6 +44,9 @@
   ],
   "files": [
     {
+      "path": "BuildTasks/HtmlCheerioParse"
+    },
+    {
       "path": "BuildTasks/PropertiesParse"
     },
     {
@@ -61,6 +64,16 @@
     }
   ],
   "contributions": [
+    {
+      "id": "NoyParseHtmlCheerioParse",
+      "type": "ms.vss-distributed-task.task",
+      "targets": [
+        "ms.vss-distributed-task.tasks"
+      ],
+      "properties": {
+        "name": "BuildTasks/HtmlCheerioParse"
+      }
+    },
     {
       "id": "NoyParsePropertiesParse",
       "type": "ms.vss-distributed-task.task",

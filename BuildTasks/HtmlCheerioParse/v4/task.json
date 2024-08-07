@@ -1,0 +1,46 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
+  "id": "d4c4f503-a5ca-4ae8-92e4-a31d77b3178d",
+  "name": "HtmlCheerioParse",
+  "friendlyName": "Html Cheerio Parse",
+  "description": "Html Cheerio Parse",
+  "helpMarkDown": "",
+  "category": "Utility",
+  "author": "alelltech",
+  "version": {
+    "Major": 4,
+    "Minor": 4,
+    "Patch": 5
+  },
+  "instanceNameFormat": "Html Cheerio Parse",
+  "groups": [
+    {
+      "name": "pipesFn",
+      "displayName": "Pipes (advanced)",
+      "isExpanded": false
+    }
+  ],
+  "inputs": [
+    {
+      "name": "source",
+      "label": "Source of Html contents",
+      "required": true,
+      "defaultValue": "http://host.com/my-path",
+      "type": "string",
+      "helpMarkDown": "You can use new Uri format to point source contents like `var://MY_VAR_NAME`, `file://./local.hml` or `http://host:8080/my-get-route`"
+    },
+    {
+      "name": "queries",
+      "label": "Html Selector or Jsonpath-plus to get Generated Inputs fields",
+      "required": true,
+      "defaultValue": "",
+      "type": "multiLine",
+      "helpMarkDown": "Set of queries to extract values from html contents: \n```\n$var div_text = [.selected] \nvar input_name = .name \n$echo div>span[.quote]```\n"
+    }
+  ],
+  "execution": {
+    "Node16": {
+      "target": "HtmlCheerioParse/v4/HtmlCheerioParse.js"
+    }
+  }
+}

@@ -2,11 +2,14 @@
  * Enable to debug typescript with ts-node alternating between "js" and "ts" extensions
  *
  */
+import { debug } from "azure-pipelines-task-lib/task";
 import {
-  debug
-} from 'azure-pipelines-task-lib/task';
-import { IExecOptions, IExecSyncOptions, IExecSyncResult, ToolRunner } from 'azure-pipelines-task-lib/toolrunner';
-import events = require('events');
+  IExecOptions,
+  IExecSyncOptions,
+  IExecSyncResult,
+  ToolRunner,
+} from "azure-pipelines-task-lib/toolrunner";
+import * as events from "node:events";
 
 export interface TypeOfX extends events.EventEmitter {
   /**
@@ -83,12 +86,14 @@ export interface TypeOfX extends events.EventEmitter {
   killChildProcess(): void;
 }
 
-
 /**
  * Overload of ToolRunner for inject commons behaviors
  */
-export const execSyncW = (toolRunner: any, options?: IExecSyncOptions): IExecSyncResult => {
-  const opts = (options ?? {});
+export const execSyncW = (
+  toolRunner: any,
+  options?: IExecSyncOptions
+): IExecSyncResult => {
+  const opts = options ?? {};
 
   debug(`Overloading ToolRunner#execSync .`);
 
@@ -99,10 +104,8 @@ export const execSyncW = (toolRunner: any, options?: IExecSyncOptions): IExecSyn
     shell: true,
     env: {
       ...process.env,
-      ...opts.env
+      ...opts.env,
     },
-    ...opts
-  })
-}
-
-
+    ...opts,
+  });
+};

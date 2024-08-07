@@ -29,5 +29,8 @@ module.exports = {
     { "filename": "BuildTasks/PropertiesParse/v4/package.json", "type": "json" },
     { "filename": "BuildTasks/PropertiesParse/v4/task.json", "updater": "task-version.js" },
 
+    { "filename": "BuildTasks/HtmlCheerioParse/v4/package.json", "type": "json" },
+    { "filename": "BuildTasks/HtmlCheerioParse/v4/task.json", "updater": "task-version.js" },
+
   ]
 }

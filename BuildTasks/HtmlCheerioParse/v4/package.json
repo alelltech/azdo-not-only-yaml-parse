@@ -1,12 +1,6 @@
 {
-  "name": "noy-tasks.commonv4",
-  "version": "2.0.0",
-  "description": "common",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Microsoft/azure-devops-extension-tasks.git"
-  },
-  "license": "MIT",
+  "name": "noy-extension-html-cheerio-parse",
+  "version": "4.4.5",
   "scripts": {
     "clean": "tsc --build --clean",
     "compile": "tsc",
@@ -15,18 +9,23 @@
     "test": "EXT=ts mocha --require ts-node/register **/_suite.ts",
     "coverage": "EXT=ts nyc --reporter=html --reporter=text --reporter=cobertura mocha --require ts-node/register --reporter mocha-junit-reporter **/_suite.ts"
   },
+  "bugs": {
+    "url": "https://github.com/Microsoft/vso-agent-tasks/issues"
+  },
   "dependencies": {
-    "azure-pipelines-task-lib": "^4.9.0",
-    "@alell/azure-pipelines-task-commons": "1.0.16",
+    "azure-pipelines-task-lib": "~5.0.0-preview.0",
+    "azure-pipelines-tool-lib": "^2.0.7",
+    "@alell/azure-pipelines-task-commons": "^2.2.1",
+    "@alell/azure-pipelines-task-jsonpath-plus": "^1.0.1",
     "cheerio": "1.0.0-rc.12",
     "jsonpath-plus": "7.2.0",
     "axios": "1.7.3"
   },
   "devDependencies": {
-    "@types/tmp": "^0.2.6",
-    "@types/node": "20.11.7",
+    "@types/js-yaml": "^4.0.1",
     "@types/jsdom": "^16.2.14",
     "@types/mocha": "^10.0.6",
+    "@types/node": "^20.10.5",
     "mocha": "^10.2.0",
     "mocha-junit-reporter": "2.2.1",
     "nock": "^13.3.2",
