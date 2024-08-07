@@ -1,6 +1,6 @@
 {
   "name": "noy-extension-html-cheerio-parse",
-  "version": "4.5.2",
+  "version": "4.5.3",
   "scripts": {
     "clean": "tsc --build --clean",
     "compile": "tsc",
