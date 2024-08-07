@@ -1,6 +1,6 @@
 {
   "name": "noy-extension-html-cheerio-parse",
-  "version": "4.5.3",
+  "version": "4.5.4",
   "scripts": {
     "clean": "tsc --build --clean",
     "compile": "tsc",
@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "@types/js-yaml": "^4.0.1",
-    "@types/jsdom": "^16.2.14",
+    "@types/jsdom": "^21.1.1",
     "@types/mocha": "^10.0.6",
     "@types/node": "^20.10.5",
     "mocha": "^10.2.0",
