@@ -1,6 +1,6 @@
 {
   "name": "noy-extension-properties-parse",
-  "version": "4.5.4",
+  "version": "4.5.5",
   "scripts": {
     "clean": "tsc --build --clean",
     "compile": "tsc",
