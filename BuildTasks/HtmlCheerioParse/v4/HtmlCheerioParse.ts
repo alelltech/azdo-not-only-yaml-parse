@@ -67,8 +67,8 @@ async function run() {
       for (const pipe of pipes) {
         cursor = pipesMap[pipe](cursor);
       }
-
-      set(`${kind}://${target}`, cursor.toString());
+      return cursor.toString();
+      // set(`${kind}://${target}`, cursor.toString());
 
       // // in: <form><input name="foo" value="bar" /></form>
       // // input[name="foo"] | val
