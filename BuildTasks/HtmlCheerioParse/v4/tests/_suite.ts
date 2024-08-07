@@ -6,7 +6,7 @@ import { mkdirSync, rmSync } from "fs";
 import { EXT, getRuntimePath } from "@alell/azure-pipelines-task-commons";
 import { _loadData } from "azure-pipelines-task-lib/internal";
 
-describe(`Xml Parse Suite`, () => {
+describe(`Html Cheerio Parse Suite`, () => {
   const tempDir = path.join(__dirname, "_temp");
   beforeEach(() => {
     // Mock temp paths

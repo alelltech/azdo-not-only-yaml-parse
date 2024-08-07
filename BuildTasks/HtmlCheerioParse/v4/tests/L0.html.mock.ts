@@ -12,7 +12,5 @@ export const mockHtmlContent = (() => {
 })();
 
 export const mockHtmlQueries = [
-  `$var div_text = [.selected]`,
-  `var input_name = .name`,
-  `$echo div>span[.quote]`,
+  `var div_text = .container-xl .d-inline-flex | next | text`,
 ].join("\n");
