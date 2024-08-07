@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.5.6](https://github.com/alelltech/azdo-not-only-yaml-parse/compare/v4.5.5...v4.5.6) (2024-08-07)
+
+
+### Bug Fixes
+
+* html cheerio pipes ([7a54807](https://github.com/alelltech/azdo-not-only-yaml-parse/commit/7a54807dfca6f2d0592233f91fd99ea14d7b7bab))
+
 ### [4.5.5](https://github.com/alelltech/azdo-not-only-yaml-parse/compare/v4.5.4...v4.5.5) (2024-08-07)
 
 ### [4.5.4](https://github.com/alelltech/azdo-not-only-yaml-parse/compare/v4.5.3...v4.5.4) (2024-08-07)
