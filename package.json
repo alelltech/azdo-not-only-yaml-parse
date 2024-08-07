@@ -1,6 +1,6 @@
 {
   "name": "noy-extension",
-  "version": "4.4.5",
+  "version": "4.5.0",
   "scripts": {
     "debug": "ts-node ",
     "new:task": "ts-node .scripts/new-task.ts",
@@ -14,7 +14,8 @@
     "coverage": "npm run each -- \"npm run --prefix={{file.dir}} coverage\"",
     "prepackage": "npm run clean && npm i && npm run build && npm run each -- \"npm i --prefix={{file.dir}} --omit=dev\"",
     "package": "tfx extension create --root . --manifest-globs vss-extension.json",
-    "postpackage": "npm i"
+    "postpackage": "npm i",
+    "pub": "tfx extension publish -t $ALELL_AZURE_DEVOPS_PAT --trace-level debug --vsix alelltech.*.vsix "
   },
   "bugs": {
     "url": "https://github.com/Microsoft/vso-agent-tasks/issues"
